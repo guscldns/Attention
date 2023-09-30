@@ -5,16 +5,12 @@
 </head>
 <body>
     <h1>OCR Text Highlighter</h1>
-    <form id="textInputForm" action="/highlight" method="POST">
-        <textarea name="text" rows="4" cols="50" placeholder="Enter text to highlight"></textarea>
-        <input type="submit" value="Start Highlight">
-    </form>
-    <input type="range" id="speedRange" min="1" max="1000" value="100">
-    <span id="speedValue">100 ms</span>
-    <div id="highlightedTextContainer">
-        <div id="highlightedText"></div>
-        <button id="stopButton">Stop Highlight</button>
+    <div id="highlightedText">
+        {{ text }}
     </div>
+    <button id="highlightButton">Start Highlight</button>
+    <input type="range" id="speedRange" min="1" max="100" value="100">
+    <span id="speedValue">50 ms</span>
     <script src="{{ url_for('static', filename='highlight.js') }}"></script>
 </body>
 </html>
