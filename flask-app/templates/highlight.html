@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Highlighter</title>
+</head>
+<body>
+    <h1>OCR Text Highlighter</h1>
+    <form id="textInputForm" action="/highlight" method="POST">
+        <textarea name="text" rows="4" cols="50" placeholder="Enter text to highlight"></textarea>
+        <input type="submit" value="Start Highlight">
+    </form>
+    <input type="range" id="speedRange" min="1" max="1000" value="100">
+    <span id="speedValue">100 ms</span>
+    <div id="highlightedTextContainer">
+        <div id="highlightedText"></div>
+        <button id="stopButton">Stop Highlight</button>
+    </div>
+    <script src="{{ url_for('static', filename='highlight.js') }}"></script>
+</body>
+</html>
