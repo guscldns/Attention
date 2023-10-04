@@ -10,7 +10,7 @@ def index():
 @app.route('/process_text', methods=['POST'])
 def process_text():
     global text_to_display
-    text_to_display = request.form['text_input'].replace('\n', '<br>')  # \n을 <br>로 변환
+    text_to_display = request.form['text_input'].replace('\n', '<br/>')  # \n을 <br>로 변환
     return redirect(url_for('test_page'))
 
 @app.route('/test_page')
