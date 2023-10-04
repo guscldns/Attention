@@ -20,4 +20,4 @@ def test_page():
     return render_template('test_page.html', words=words)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
